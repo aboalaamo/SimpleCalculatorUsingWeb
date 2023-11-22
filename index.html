@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="main.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            background-color: rgb(0, 60, 255);
+            padding: 20px;
+            width: fit-content;
+            margin: auto;
+            position: relative;
+            border-radius: 15px;
+            color: #ffffff;
+        }
+        .calc {
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            border: solid rgb(88, 88, 88) 1px ;
+            top: 80px;
+            left: 80px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 2px;
+            overflow: hidden;
+            padding-right: 2px;
+            padding-left: 2px;
+            color: rgb(216, 12, 12);
+        }
+        input {
+            color: rgb(216, 12, 12);
+        }
+        button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 16px;
+            border: solid #ffffff 2px;
+            background-color: rgb(0, 60, 255);
+            color: white;
+            cursor: pointer;
+        }
+        .buttons {
+            margin-top: 10px;
+            margin-bottom: 0;
+            margin-left: 20px;
+        }
+        .simplecalc {
+            position: absolute;
+            background-color: transparent;
+            right: -5px;
+            bottom: -50px;
+            color: white;
+            font-size: 1.7em;
+            text-align: center;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="num1">Enter First Number : &nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="number" id="num1"><br><br>
+        <label for="num2">Enter Second Number : </label>
+        <input type="number" id="num2"> <br><br>
+        Result :
+        <p class="calc" id="result_num"></p>
+        <div class="buttons">
+            <button onclick="sum();">+</button>
+            <button onclick="sub();">-</button>
+            <button onclick="mul();"><sub>*</sub></button>
+            <button onclick="div();">/</button>
+        </div>
+        <p class="simplecalc">Simple <br> Calculator</p>
+    </div>
+    <script>
+        function sum() {
+            let num_1 = Number(document.getElementById("num1").value) ;
+            let num_2 = Number(document.getElementById("num2").value) ;
+            let result = num_1 + num_2 ;
+            document.getElementById("result_num").innerHTML = result ;
+        }
+        function sub() {
+            let num_1 = Number(document.getElementById("num1").value) ;
+            let num_2 = Number(document.getElementById("num2").value) ;
+            let result = num_1 - num_2 ;
+            document.getElementById("result_num").innerHTML = result ;
+        }
+        function mul() {
+            let num_1 = Number(document.getElementById("num1").value) ;
+            let num_2 = Number(document.getElementById("num2").value) ;
+            let result = num_1 * num_2 ;
+            document.getElementById("result_num").innerHTML = result ;
+        }
+        function div() {
+            let num_1 = Number(document.getElementById("num1").value) ;
+            let num_2 = Number(document.getElementById("num2").value) ;
+            let result = num_1 / num_2 ;
+            document.getElementById("result_num").innerHTML = result ;
+        }
+    </script>
+</body>
+</html>
